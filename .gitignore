@@ -1,0 +1,20 @@
+# Environment variables (API keys, webhooks)
+.env
+
+# Virtual environment
+venv/
+
+# Database (contains your device data)
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+config.py
