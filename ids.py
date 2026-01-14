@@ -3,11 +3,12 @@ from scapy.all import sniff, IP, TCP, UDP, ARP, Ether
 from collections import defaultdict
 from datetime import datetime, timedelta
 from config import INTERFACE, PORT_SCAN_THRESHOLD, BRUTE_FORCE_THRESHOLD, KNOWN_DEVICES, SLACK_WEBHOOK
-from database import init_db, log_alert, log_device, log_traffic
+from database import init_db, log_alert, log_device, log_traffic, flush_traffic_buffer
 from ml_detector import record_and_check, train_model, detector
 import requests
 import threading
 import time
+import atexit
 
 
 
@@ -19,6 +20,9 @@ anomaly_alerted = defaultdict(lambda: None)  # Track when we last alerted for ea
 # Stats counters
 packet_count = 0
 ml_enabled = False
+
+# Flush traffic buffer on exit
+atexit.register(flush_traffic_buffer)
 
 def send_slack_alert(message):
     if SLACK_WEBHOOK:
