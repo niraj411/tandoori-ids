@@ -26,6 +26,12 @@ A lightweight, ML-powered Intrusion Detection System designed for small business
 - Network health metrics
 - Auto-refreshing interface
 
+### Data Visualization
+- **Plotly** - Interactive scatter plots, area charts, gauges, pie charts
+- **Seaborn** - Heatmaps, correlation matrices
+- **Matplotlib** - Statistical visualizations
+- **NetworkX** - Network topology graphs
+
 ### Alerting
 - Console alerts with severity levels
 - Slack webhook integration
@@ -140,14 +146,54 @@ streamlit run dashboard.py
 
 Access at `http://localhost:8501`
 
-## Dashboard Screenshots
+## Screenshots
 
-The dashboard provides four main views:
+### Main Dashboard
+![Dashboard Overview](screenshots/dashboard-overview.png)
 
-- **Traffic** - Real-time packet graphs, protocol breakdown, top talkers
-- **Alerts** - Filterable alert history with severity indicators
-- **Devices** - Network device inventory (known vs unknown)
-- **Analysis** - Health metrics, hourly patterns, ML model status
+### Traffic Analysis
+![Traffic Tab](screenshots/traffic-tab.png)
+
+### Network Topology Graph
+![Network Graph](screenshots/network-graph.png)
+
+### Weekly Traffic Heatmap
+![Heatmap](screenshots/heatmap.png)
+
+### Alert Timeline
+![Alerts](screenshots/alerts-tab.png)
+
+---
+
+## Dashboard Features
+
+The dashboard provides five main tabs with rich visualizations:
+
+### Traffic Tab
+- **Area Chart** - Traffic volume over time
+- **Pie Chart** - Protocol distribution (TCP/UDP)
+- **Scatter Plot** - Packet size distribution with hover details
+- **Bar Chart** - Top talkers by packet count
+
+### Analysis Tab
+- **Scatter Plot** - Port activity distribution
+- **Gauge Chart** - Real-time packet rate vs average
+- **Heatmap** - Weekly traffic patterns (day/hour)
+- **Correlation Matrix** - Feature correlations (size, port, time)
+
+### Alerts Tab
+- **Timeline** - Scatter plot of alerts over time by severity
+- **Pie Charts** - Alert breakdown by type and severity
+- **Filterable Cards** - Detailed alert information
+
+### Devices Tab
+- **Inventory Table** - All discovered devices with status
+- **Pie Chart** - Known vs unknown device ratio
+
+### Network Tab
+- **Graph Visualization** - Network topology using NetworkX
+- **Connection Table** - Source/destination traffic pairs
+- **ML Model Status** - Training metrics and baseline stats
 
 ## Alert Types
 
@@ -163,9 +209,12 @@ The dashboard provides four main views:
 - **Python 3.8+**
 - **Scapy** - Packet capture and analysis
 - **Scikit-learn** - Isolation Forest for anomaly detection
-- **Streamlit** - Web dashboard
+- **Streamlit** - Web dashboard framework
 - **SQLite** - Data persistence
-- **Pandas** - Data manipulation
+- **Pandas/NumPy** - Data manipulation
+- **Plotly** - Interactive visualizations
+- **Matplotlib/Seaborn** - Statistical charts and heatmaps
+- **NetworkX** - Graph analysis and visualization
 
 ## Project Structure
 

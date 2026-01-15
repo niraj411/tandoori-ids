@@ -5,3 +5,7 @@ python-dotenv
 scikit-learn
 numpy
 pandas
+matplotlib
+seaborn
+plotly
+networkx
